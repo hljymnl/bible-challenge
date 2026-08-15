@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我爱读圣经 · 一年7遍挑战</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="logo">📖 我爱读圣经</div>
+  <div class="sub">一年 7 遍 · 每日经文挑战</div>
+</header>
+
+<main class="container">
+
+  <!-- 进度总览 -->
+  <section class="card hero">
+    <div class="ring-wrap">
+      <svg viewBox="0 0 140 140" class="ring">
+        <circle class="ring-bg" cx="70" cy="70" r="60"/>
+        <circle class="ring-fg" id="ringFg" cx="70" cy="70" r="60"/>
+      </svg>
+      <div class="ring-center">
+        <div class="pct" id="pctText">0%</div>
+        <div class="pct-label">已读完</div>
+      </div>
+    </div>
+    <div class="hero-info">
+      <div class="today-label">📅 第 <b id="dayNum">1</b> 天 / 365</div>
+      <div class="stat-row">
+        <span>📚 累计已读 <b id="totalReadCh">0</b> 章</span>
+        <span>➕ 今日任务 <b id="todayTask">0</b> 章</span>
+      </div>
+      <div class="stat-row">
+        <span>🏆 当前第 <b id="passNum">1</b> 遍</span>
+        <span>✅ 连续打卡 <b id="streak">0</b> 天</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 今日必读 -->
+  <section class="card">
+    <div class="card-title">📖 今日必读</div>
+    <div class="reading" id="readingInfo">计算中…</div>
+    <div class="voice-bar">
+      <select id="voiceSelect">
+        <option value="auto">🔊 朗读音色（晓晓）</option>
+        <option value="xiaoxiao">👩 晓晓（女声）</option>
+        <option value="yunxi">👨 云希（男声）</option>
+      </select>
+      <button class="btn primary" id="btnSpeak">▶ 朗读今日经文</button>
+      <button class="btn ghost" id="btnStop">⏹ 停止</button>
+    </div>
+    <div class="checkin">
+      <button class="btn big" id="btnCheckin">✅ 今日已读完，打卡！</button>
+      <div class="checkin-note" id="checkinNote"></div>
+    </div>
+  </section>
+
+  <!-- 高效方法 -->
+  <section class="card">
+    <div class="card-title">⚡ 如何更高效完成任务？</div>
+    <div class="tips" id="tipsArea"></div>
+  </section>
+
+  <!-- 设置 -->
+  <section class="card settings">
+    <div class="card-title">⚙️ 设置</div>
+    <div class="set-row">
+      <label>开始日期（用于计算进度）</label>
+      <input type="date" id="startDate">
+    </div>
+    <div class="set-row">
+      <label>每日目标章数（默认按一年7遍自动）</label>
+      <input type="number" id="targetCh" min="1" value="23">
+    </div>
+    <div class="set-row">
+      <button class="btn ghost" id="btnReset">🔄 重置进度</button>
+    </div>
+    <div class="set-row note" id="azureNote"></div>
+  </section>
+
+</main>
+
+<footer class="foot">愿主的话语，成为你每天的粮食。♥ 一年读经 7 遍</footer>
+
+<script src="data/bible-books.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/tts.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
