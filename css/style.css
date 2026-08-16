@@ -112,6 +112,32 @@ select:focus, input:focus { outline: 2px solid var(--blue); border-color: var(--
 .set-row label { min-width: 180px; font-size: 14px; color: var(--muted); }
 .set-row.note { font-size: 12px; color: var(--muted); }
 
+/* 已读记录 / 计划表 */
+.plan-summary { display: flex; gap: 16px; font-size: 14px; color: var(--muted); margin-bottom: 10px; }
+.plan-summary b { color: var(--blue-d); font-size: 16px; }
+.plan-toolbar { display: flex; gap: 8px; margin-bottom: 14px; }
+.btn.sm { padding: 6px 12px; font-size: 13px; }
+.btn.active { background: var(--blue); color: #fff; }
+
+.history { max-height: 460px; overflow-y: auto; border: 1px solid var(--line); border-radius: 10px; }
+.hist-month { font-weight: 700; color: var(--blue-d); padding: 10px 12px 4px; background: #f0f6ff; position: sticky; top: 0; }
+.hist-row {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 12px; border-bottom: 1px solid #f0f2f5; font-size: 14px;
+}
+.hist-row:last-child { border-bottom: none; }
+.hist-date { min-width: 74px; color: var(--muted); font-size: 13px; }
+.hist-day { font-weight: 700; color: var(--blue-d); min-width: 60px; }
+.hist-ref { flex: 1; }
+.hist-ref.done { color: var(--green); }
+.hist-ref.todo { color: var(--muted); }
+.hist-pass { min-width: 46px; text-align: center; font-size: 12px; background: #edf2f7; border-radius: 6px; padding: 2px 6px; color: var(--blue-d); }
+.hist-check { min-width: 24px; text-align: center; }
+.hist-check.done { color: var(--green); font-weight: 700; }
+.hist-check.todo { color: #cbd5e0; }
+.hist-today { background: #fffbeb; }
+
+
 .foot { text-align: center; color: var(--muted); font-size: 13px; padding: 10px 0 30px; }
 
 @media (max-width: 520px) {
